@@ -247,6 +247,7 @@ p {
   box-shadow: 0 18px 40px rgba(0,0,0,0.25);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
 }
 
@@ -254,6 +255,7 @@ p {
 .has-dropdown.open .dropdown {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateX(-50%) translateY(0);
 }
 
@@ -304,6 +306,7 @@ p {
     transform: translateY(-12px);
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
     overflow-y: auto;
   }
@@ -311,6 +314,7 @@ p {
   .nav-links.open {
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     transform: translateY(0);
   }
 
@@ -331,6 +335,7 @@ p {
     display: block;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
     margin-bottom: 10px;
   }
 
@@ -856,6 +861,12 @@ h2.headline {
   .hero-inner { padding: 60px 24px 50px; }
   .container { padding: 0 22px; }
   .nav { padding: 16px 22px; }
+}
+
+@media (max-width: 700px) {
+  .cta-flag-riders {
+    background-position: left bottom !important;
+  }
 }
 
 /* ---------- newsletter embed (Mailchimp) ---------- */
