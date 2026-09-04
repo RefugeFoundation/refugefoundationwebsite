@@ -235,6 +235,17 @@ p {
   transform: rotate(180deg);
 }
 
+@media (min-width: 901px) {
+  .has-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 14px;
+  }
+}
+
 .dropdown {
   position: absolute;
   top: calc(100% + 10px);
