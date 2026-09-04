@@ -1064,3 +1064,113 @@ h2.headline {
     grid-template-columns: 1fr;
   }
 }
+
+/* ---------- HubSpot waitlist form ---------- */
+
+.waitlist-embed .hs-form-field {
+  margin-bottom: 18px;
+}
+
+.waitlist-embed .hs-form-field label,
+.waitlist-embed label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.waitlist-embed input[type="text"],
+.waitlist-embed input[type="email"],
+.waitlist-embed input[type="tel"],
+.waitlist-embed input[type="number"],
+.waitlist-embed select,
+.waitlist-embed textarea,
+.waitlist-embed .hs-input {
+  width: 100% !important;
+  padding: 13px 16px !important;
+  border-radius: 10px !important;
+  border: 1px solid var(--line) !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  background: var(--cream) !important;
+  color: var(--ink) !important;
+  box-sizing: border-box !important;
+}
+
+.waitlist-embed input:focus,
+.waitlist-embed select:focus,
+.waitlist-embed textarea:focus {
+  outline: none !important;
+  border-color: var(--rust) !important;
+  background: var(--white) !important;
+}
+
+.waitlist-embed .hs-button,
+.waitlist-embed input[type="submit"] {
+  display: inline-flex !important;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  background: var(--rust) !important;
+  color: var(--white) !important;
+  border: none !important;
+  border-radius: 999px !important;
+  padding: 14px 26px !important;
+  font-family: var(--font-body) !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  margin-top: 6px;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.waitlist-embed .hs-button:hover,
+.waitlist-embed input[type="submit"]:hover {
+  background: var(--rust-dark) !important;
+  transform: translateY(-2px);
+}
+
+.waitlist-embed .hs-error-msgs {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  color: var(--rust-dark);
+  font-size: 13px;
+}
+
+.waitlist-embed .submitted-message {
+  text-align: center;
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.waitlist-embed .hs-richtext,
+.waitlist-embed .legal-consent-container {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.waitlist-embed fieldset {
+  max-width: 100% !important;
+}
+
+.waitlist-embed p,
+.waitlist-embed li,
+.waitlist-embed .hsfc-RichText {
+  color: var(--ink-soft) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.7 !important;
+}
+
+.waitlist-embed h1,
+.waitlist-embed h2,
+.waitlist-embed h3,
+.waitlist-embed h4,
+.waitlist-embed .hsfc-Heading {
+  color: var(--ink) !important;
+  font-family: var(--font-head) !important;
+  font-weight: 700 !important;
+}
