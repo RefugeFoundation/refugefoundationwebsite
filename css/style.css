@@ -1107,10 +1107,11 @@ h2.headline {
 }
 
 .waitlist-embed .hs-button,
+.waitlist-embed .hsfc-Button,
 .waitlist-embed input[type="submit"] {
   display: inline-flex !important;
   align-items: center;
-  width: 100%;
+  width: auto !important;
   justify-content: center;
   background: var(--rust) !important;
   color: var(--white) !important;
@@ -1122,10 +1123,12 @@ h2.headline {
   font-size: 15px !important;
   cursor: pointer !important;
   margin-top: 6px;
-  transition: background 0.18s ease, transform 0.18s ease;
+  box-shadow: 0 6px 18px rgba(193, 122, 78, 0.35) !important;
+  transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .waitlist-embed .hs-button:hover,
+.waitlist-embed .hsfc-Button:hover,
 .waitlist-embed input[type="submit"]:hover {
   background: var(--rust-dark) !important;
   transform: translateY(-2px);
