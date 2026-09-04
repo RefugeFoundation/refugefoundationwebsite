@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Raw/working files kept at the project root (not part of the published site —
+# the site only references the processed copies under assets/)
+/*.jpg
+/*.jpeg
+/*.JPG
+/*.JPEG
+/*.png
+/*.PNG
+/*.pdf
+/*.PDF
+/*.svg
+/*.mp4
+/*.mov
+
+# Video is too large for git (GitHub blocks files over 100MB).
+# See README / project notes for how this is hosted instead.
+assets/video/
