@@ -401,6 +401,18 @@ p {
   background: linear-gradient(180deg, rgba(20,16,14,0.35) 0%, rgba(20,16,14,0.55) 55%, rgba(15,12,10,0.88) 100%);
 }
 
+.hero-video-fill {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(30px) brightness(0.55);
+  transform: scale(1.15);
+}
+
 .hero-video {
   position: absolute;
   inset: 0;
@@ -408,6 +420,14 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Hero video source is a wide cinematic clip; cropping it edge-to-edge on
+   narrow phone screens cuts off the people in it. Show the full frame
+   (letterboxed) with a blurred fill behind it instead of an aggressive crop. */
+@media (max-width: 900px) {
+  .hero-video-fill { display: block; }
+  .hero-video { object-fit: contain; }
 }
 
 .hero-inner {
