@@ -136,6 +136,27 @@ p {
   box-shadow: 0 6px 18px rgba(211, 162, 74, 0.35);
 }
 
+.copy-toast {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--white);
+  font-size: 13.5px;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .btn-outline {
   background: transparent;
   color: var(--white);

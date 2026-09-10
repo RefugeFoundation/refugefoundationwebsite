@@ -40,6 +40,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Email buttons: attempt to open the visitor's mail app via mailto,
+  // and also copy the address to the clipboard with a small confirmation,
+  // since not every browser/device has a default mail client configured.
+  document.querySelectorAll(".email-copy-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var email = btn.getAttribute("data-email");
+      if (!email || !navigator.clipboard) return;
+      navigator.clipboard.writeText(email).then(function () {
+        showCopyToast(btn, "Email copied!");
+      }).catch(function () {});
+    });
+  });
+
+  function showCopyToast(anchorEl, message) {
+    var toast = document.createElement("span");
+    toast.className = "copy-toast";
+    toast.textContent = message;
+    anchorEl.insertAdjacentElement("afterend", toast);
+    requestAnimationFrame(function () {
+      toast.classList.add("show");
+    });
+    setTimeout(function () {
+      toast.classList.remove("show");
+      setTimeout(function () {
+        toast.remove();
+      }, 250);
+    }, 1800);
+  }
+
   // Simple front-end form handling (no backend wired up yet)
   document.querySelectorAll("form[data-placeholder-form]").forEach(function (form) {
     form.addEventListener("submit", function (e) {
