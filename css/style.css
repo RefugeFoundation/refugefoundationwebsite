@@ -498,6 +498,17 @@ section {
   object-fit: cover;
 }
 
+/* Forces the image to crop to the text column's height exactly, instead
+   of letting the image's own aspect ratio influence the row height. */
+.col-media.fill-height {
+  position: relative;
+}
+
+.col-media.fill-height img {
+  position: absolute;
+  inset: 0;
+}
+
 h2.headline {
   font-size: clamp(28px, 3.6vw, 40px);
   margin-bottom: 22px;
