@@ -916,6 +916,16 @@ h2.headline {
      wide cinematic clip, so a shorter hero also means the cover crop
      scales up less and reads as noticeably less zoomed in on phones. */
   .hero { padding: 0; min-height: 480px; }
+
+  /* On phones, sections below the fold can sit fully offscreen when the
+     scroll-triggered fade-in hasn't fired yet, which reads as a blank
+     page rather than "content is coming." Skip the animation on mobile
+     and just show everything. */
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 @media (max-width: 560px) {
