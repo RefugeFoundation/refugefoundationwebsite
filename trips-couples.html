@@ -135,8 +135,47 @@
 </section>
 
 <section class="section-white">
-  <div class="container centered reveal">
-    <p class="lede" style="margin: 0 auto;">If you have more questions regarding Couples Trips, please reach out to <a href="mailto:marissa@refugefoundation.org" style="color:var(--rust-dark); font-weight:600;">Marissa</a>.</p>
+  <div class="container" style="max-width: 700px;">
+    <h2 class="headline centered reveal" style="margin: 0 auto 12px;">Interested in a Couples Trip?</h2>
+    <p class="lede centered reveal" style="margin: 0 auto 40px;">Reach out to us if you're interested or have more questions about Couples Trips — we'd love to hear from you.</p>
+
+    <div class="reveal">
+      <div class="form-card">
+        <form data-placeholder-form>
+          <input type="hidden" name="reason" value="Couple's Trips">
+          <div class="form-row">
+            <div class="field">
+              <label for="cfname">First Name</label>
+              <input type="text" id="cfname" name="fname" required>
+            </div>
+            <div class="field">
+              <label for="clname">Last Name</label>
+              <input type="text" id="clname" name="lname" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="cemail">Email</label>
+              <input type="email" id="cemail" name="email" required>
+            </div>
+            <div class="field">
+              <label for="cphone">Phone</label>
+              <input type="tel" id="cphone" name="phone">
+            </div>
+          </div>
+          <div class="field">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-rust">
+            <span>Send Message</span>
+            <svg viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-success" style="display:none; color:#a8663e; font-weight:600; margin-top:16px;">Thanks for reaching out — we'll be in touch soon.</p>
+          <p class="form-note">There is a good chance we are serving guests on site when your message comes through, but we do answer every one, usually within 2-3 business days.</p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
