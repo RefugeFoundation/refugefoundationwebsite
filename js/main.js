@@ -17,29 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Reveal-on-scroll
-  var revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window && revealEls.length) {
-    var io = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            io.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-    revealEls.forEach(function (el) {
-      io.observe(el);
-    });
-  } else {
-    revealEls.forEach(function (el) {
-      el.classList.add("in-view");
-    });
-  }
-
   // Email buttons: attempt to open the visitor's mail app via mailto,
   // and also copy the address to the clipboard with a small confirmation,
   // since not every browser/device has a default mail client configured.
