@@ -69,6 +69,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1800);
   }
 
+  // The HubSpot registration form (register.html) resizes its own iframe
+  // container as its content changes, by writing an inline height style on
+  // .hs-form-frame. When the multi-page form is replaced by the short
+  // "thank you" message post-submit, that height drops sharply — but the
+  // visitor is usually scrolled down near the submit button at that point,
+  // so the confirmation renders above their current scroll position and
+  // the page looks blank until they scroll back up. Watch for that drop
+  // and bring the confirmation into view automatically.
+  document.querySelectorAll(".register-embed .hs-form-frame").forEach(function (frame) {
+    var card = frame.closest(".register-embed");
+    var maxHeight = 0;
+    var observer = new MutationObserver(function () {
+      var height = parseInt(frame.style.height, 10) || 0;
+      if (height > maxHeight) {
+        maxHeight = height;
+      } else if (maxHeight > 500 && height > 0 && height < maxHeight * 0.6) {
+        card.classList.add("form-submitted");
+        card.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+    observer.observe(frame, { attributes: true, attributeFilter: ["style"] });
+  });
+
   // Simple front-end form handling (no backend wired up yet)
   document.querySelectorAll("form[data-placeholder-form]").forEach(function (form) {
     form.addEventListener("submit", function (e) {

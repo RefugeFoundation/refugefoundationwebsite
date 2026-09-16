@@ -891,6 +891,14 @@ h2.headline {
   }
 }
 
+/* Once main.js detects the form has been replaced by the post-submit
+   "thank you" message (a sharp height drop), drop the reserved min-height
+   so the card shrinks to match instead of leaving a tall blank gap below
+   the confirmation text. */
+.register-embed.form-submitted .hs-form-frame {
+  min-height: 0;
+}
+
 /* ---------- donate page ---------- */
 
 .give-grid {
