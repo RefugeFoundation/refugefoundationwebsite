@@ -862,6 +862,25 @@ h2.headline {
   margin-top: 14px;
 }
 
+/* HubSpot iframe embeds (e.g. register.html) report their real height to the
+   parent only after the embed script loads and the form itself renders, so
+   the card can sit near-empty for a moment first. Reserving space up front
+   stops that collapse, which otherwise let a tap meant for the form land on
+   whatever sits right below the card instead. */
+.register-embed .hs-form-frame {
+  min-height: 900px;
+}
+
+.register-embed + .form-note {
+  margin-top: 32px;
+}
+
+@media (max-width: 700px) {
+  .register-embed .hs-form-frame {
+    min-height: 1300px;
+  }
+}
+
 /* ---------- donate page ---------- */
 
 .give-grid {
