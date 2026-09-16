@@ -365,10 +365,20 @@ p {
     box-shadow: none;
     background: rgba(255,255,255,0.05);
     display: block;
+    margin-bottom: 10px;
+  }
+
+  /* Only show/enable the Trips submenu once the mobile menu itself is
+     open. Previously the block above set opacity/visibility/pointer-events
+     directly on .dropdown, which overrode .nav-links' closed state (a
+     child's explicit value always wins over an ancestor's) — leaving the
+     "Men's/Women's/Couple's Trips" links invisible but still clickable
+     and fixed in place over the rest of the page even while the mobile
+     menu was closed. */
+  .nav-links.open .dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    margin-bottom: 10px;
   }
 
   .has-dropdown:hover .dropdown,
