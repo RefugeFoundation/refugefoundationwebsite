@@ -823,6 +823,15 @@ h2.headline {
 .info-card h4 { font-size: 16px; margin-bottom: 4px; }
 .info-card p, .info-card a { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
 
+/* Fixed width (rather than shrink-to-content) so the two contact blocks
+   share one left edge. Without it, each block's width follows its own
+   longest line (e.g. a longer email address), so once they wrap to
+   stack on mobile, each is centered independently and their text no
+   longer lines up into a single column. */
+.contact-card {
+  width: 230px;
+}
+
 .form-card {
   background: var(--white);
   border: 1px solid var(--line);
