@@ -1007,7 +1007,13 @@ h2.headline {
   /* The card's 40px padding plus the .container's own side padding
      left very little width for the actual input fields on phones. */
   .form-card {
-    padding: 24px 20px;
+    padding: 20px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .form-card {
+    padding: 18px 10px;
   }
 }
 
