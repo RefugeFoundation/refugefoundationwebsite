@@ -69,6 +69,25 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(frame, { attributes: true, attributeFilter: ["style"] });
   });
 
+  // On some mobile browsers (notably iOS Safari with Low Power Mode, and
+  // some in-app/webview browsers), autoplay of the muted home hero video
+  // gets blocked and the browser shows its own native play button over
+  // the video instead. Tapping that button often does nothing, because
+  // .hero-inner sits above the video (it needs its own higher z-index so
+  // its text stays readable over the footage) and silently absorbs the
+  // tap before it ever reaches the <video> element. Listen for a tap
+  // anywhere in the hero and retry play() from it directly — a real user
+  // gesture, which browsers allow even when blocking silent autoplay.
+  var heroVideo = document.querySelector(".hero-video");
+  var heroSection = document.querySelector(".hero");
+  if (heroVideo && heroSection) {
+    heroSection.addEventListener("click", function () {
+      if (heroVideo.paused) {
+        heroVideo.play().catch(function () {});
+      }
+    });
+  }
+
   // Simple front-end form handling (no backend wired up yet)
   document.querySelectorAll("form[data-placeholder-form]").forEach(function (form) {
     form.addEventListener("submit", function (e) {
