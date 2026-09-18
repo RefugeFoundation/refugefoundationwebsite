@@ -1153,8 +1153,7 @@ h2.headline {
 }
 
 .team-photo {
-  width: 220px;
-  max-width: 100%;
+  width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   background: var(--cream-2);
@@ -1203,8 +1202,21 @@ h2.headline {
   }
 }
 
-/* Founders card spans the full row by itself, pushing the other two
-   team members onto their own shared row below. */
+/* Founders card spans the full row by itself, pushing Fred and Jacen
+   onto their own shared row below (a "pyramid" — one centered card on
+   top, two side by side underneath). Constrained to one column's width
+   and centered, rather than stretching edge to edge, so the photo
+   stays the same size as Fred's and Jacen's instead of blowing up
+   past its native resolution to fill the full row. */
 .team-founders {
   grid-column: 1 / -1;
+  max-width: calc((100% - 40px) / 2);
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .team-founders {
+    max-width: 100%;
+  }
 }
