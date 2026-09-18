@@ -1201,3 +1201,36 @@ h2.headline {
     grid-template-columns: 1fr;
   }
 }
+
+/* Founders card spans the full row by itself (pushing the other two
+   team members onto their own shared row below) and lays out as
+   photo-left/copy-right instead of stacked, since at full row width
+   the standard stacked .team-photo would need to stretch far past
+   the source photo's resolution to keep its 4:5 aspect ratio. */
+.team-founders {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.team-founders .team-photo {
+  width: 320px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.team-founders .team-copy {
+  flex: 1;
+}
+
+@media (max-width: 700px) {
+  .team-founders {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .team-founders .team-photo {
+    width: 100%;
+  }
+}
