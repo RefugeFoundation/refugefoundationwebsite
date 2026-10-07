@@ -12,3 +12,6 @@
 
 /canvas-trip-invitation
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/trips-invitation
+  X-Robots-Tag: noindex, nofollow, noarchive
