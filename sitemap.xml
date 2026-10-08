@@ -50,4 +50,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://refugefoundation.org/privacy-policy.html</loc>
+  </url>
+  <url>
+    <loc>https://refugefoundation.org/sms-terms.html</loc>
+  </url>
 </urlset>

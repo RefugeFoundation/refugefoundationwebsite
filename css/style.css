@@ -1255,6 +1255,3 @@ h2.headline {
 }
 .legal .callout p:last-child { margin-bottom: 0; }
 
-/* DRAFT ONLY: highlights details the organization still has to supply.
-   Remove every .todo before publishing. */
-.todo { background: #fff3a8; color: #5b4a00; padding: 1px 5px; border-radius: 4px; font-weight: 600; }
