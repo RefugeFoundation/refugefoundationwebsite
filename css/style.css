@@ -1143,3 +1143,25 @@ h2.headline {
 }
 .legal .callout p:last-child { margin-bottom: 0; }
 
+
+/* Temporary fall campaign: trip-donation buttons (.campaign-trip). Remove after Nov 30, 2026. */
+.cta-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.cta-banner .cta-buttons { justify-content: center; }
+.nav-cta { gap: 12px; }
+.nav-cta .btn { padding: 10px 18px; font-size: 14px; }
+.nav-trip-mobile { display: none; }
+@media (max-width: 1180px) {
+  .nav-links { gap: 22px; }
+}
+@media (min-width: 901px) and (max-width: 1060px) {
+  .nav { padding-left: 20px; padding-right: 20px; }
+  .nav-links { gap: 14px; }
+  .nav-links .nav-link { font-size: 14px; white-space: nowrap; }
+  .nav-cta { gap: 8px; }
+  .nav-cta .btn { padding: 9px 13px; font-size: 13px; gap: 7px; }
+}
+@media (max-width: 640px) {
+  .nav-cta .campaign-trip { display: none; }
+  .nav-links .nav-trip-mobile { display: block; padding: 10px 0; border-bottom: none; }
+  .nav-trip-mobile .btn { width: 100%; justify-content: center; }
+}
